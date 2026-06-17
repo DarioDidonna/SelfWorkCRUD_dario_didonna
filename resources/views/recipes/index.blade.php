@@ -22,8 +22,8 @@
                                     <img src="{{ Storage::url($recipe->img) }}" alt="{{ $recipe->title }}"
                                         class="card-img-top recipe-card-img">
                                 @else
-                                    <img src="/media/default.png"
-                                        alt="Immagine di default" class="card-img-top recipe-card-img">
+                                    <img src="/media/default.png" alt="Immagine di default"
+                                        class="card-img-top recipe-card-img">
                                 @endif
 
                                 <span class="badge bg-blur text-dark position-absolute top-3 start-3">
@@ -69,7 +69,8 @@
                             <h4 class="fw-bold text-dark-custom">Nessuna ricetta trovata</h4>
                             <p class="text-muted small mb-4">Il ricettario è ancora vuoto. Condividi la prima ricetta
                                 con la community!</p>
-                            <a href="{{ route('recipe_create') }}" class="btn btn-recipe-lg-primary btn-sm">Crea la prima ricetta</a>
+                            <a href="{{ route('recipe_create') }}" class="btn btn-recipe-lg-primary btn-sm">Crea la
+                                prima ricetta</a>
                         </div>
                     </div>
                 @endforelse
