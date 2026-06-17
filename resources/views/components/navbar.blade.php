@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-custom sticky-top shadow-sm">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
+        <a class="navbar-brand" href="/">
             <i class="bi bi-egg-fried me-2 brand-icon"></i>Gusto<span class="brand-accent">Digitale</span>
         </a>
 
@@ -11,17 +11,17 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto align-items-center">
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ url('/') }}">Home</a>
+                    <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('articles') ? 'active' : '' }}" href="#">Ricette</a>
+                    <a class="nav-link {{ request()->is('articles') ? 'active' : '' }}" href="{{route('recipes_index')}}">Ricette</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Categorie</a>
                 </li>
                 
                 <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-                    <a class="btn btn-recipe-nav d-inline-flex align-items-center" href="#">
+                    <a class="btn btn-recipe-nav d-inline-flex align-items-center" href="{{route('recipe_create')}}">
                         <i class="bi bi-plus-circle me-2"></i> Nuova Ricetta
                     </a>
                 </li>

@@ -1,15 +1,12 @@
 <section class="py-5 bg-white">
     <div class="container py-4">
-        <!-- Box Principale della CTA -->
         <div class="cta-wrapper rounded-5 p-4 p-md-5 position-relative overflow-hidden shadow-sm">
 
-            <!-- Elementi geometrici di sfondo decorativi (Blob di luce) -->
             <div class="cta-blob cta-blob-1"></div>
             <div class="cta-blob cta-blob-2"></div>
 
             <div class="row align-items-center position-relative z-2">
 
-                <!-- Colonna Testo (Sinistra) -->
                 <div class="col-lg-7 text-center text-lg-start mb-4 mb-lg-0">
                     <span class="badge badge-cta mb-3">
                         <i class="bi bi-lightning-charge-fill me-1"></i> Diventa un Autore
@@ -23,11 +20,9 @@
                     </p>
                 </div>
 
-                <!-- Colonna Pulsante d'Azione (Destra) -->
                 <div class="col-lg-5 text-center text-lg-end">
                     <div class="d-inline-flex flex-column align-items-center align-items-lg-end">
-                        <!-- Pulsante che collegherai alla rotta 'create' del CRUD -->
-                        <a href="#" class="btn btn-cta-action shadow-sm mb-3">
+                        <a href="{{route('recipes_index')}}" class="btn btn-cta-action shadow-sm mb-3 text-light border-light">
                             <i class="bi bi-plus-circle-fill me-2"></i> Inizia a Cucinare
                         </a>
                         <small class="text-white-50 d-block">

@@ -1,14 +1,14 @@
-/* resources/css/app.css */
-
 :root {
-    --primary-color: #2D3436;    /* Antracite scuro */
-    --accent-color: #E67E22;     /* Arancio "Carota" professionale */
-    --accent-hover: #D35400;     /* Arancio scuro */
-    --light-bg: #FCF9F5;         /* Sfondo panna chiarissimo */
+    --primary-color: #2D3436;    
+    --accent-color: #E67E22;     
+    --accent-hover: #D35400;     
+    --light-bg: #FCF9F5;         
     --font-main: 'Inter', sans-serif;
 }
 
-/* Stile Navbar */
+/* ==========================================================================
+   COMPONENTE: NAVBAR (components/navbar.blade.php)
+   ========================================================================== */
 .navbar-custom {
     background-color: #ffffff;
     padding: 0.9rem 0;
@@ -39,11 +39,10 @@
     color: var(--accent-color);
 }
 
-/* Bottone Navigazione */
 .btn-recipe-nav {
     background-color: var(--accent-color);
     color: white;
-    border-radius: 50px; /* Bottone a pillola molto moderno */
+    border-radius: 50px;
     padding: 0.6rem 1.4rem;
     font-weight: 600;
     font-size: 0.9rem;
@@ -58,28 +57,25 @@
     box-shadow: 0 4px 12px rgba(230, 126, 34, 0.2);
 }
 
-/* Toggler personalizzato (Rimuove bordi blu fastidiosi) */
 .custom-toggler {
     border: none;
     padding: 0;
 }
+
 .custom-toggler:focus {
     box-shadow: none;
 }
 
-
-
 /* ==========================================================================
-   Hero Header Styles
+   VISTA: HOMEPAGE - HERO HEADER 
    ========================================================================== */
 .hero-header {
-    background-color: var(--light-bg); /* Sfondo panna chiarissimo */
-    min-height: calc(85vh - 70px); /* Adatta l'altezza sottraendo la navbar */
+    background-color: var(--light-bg);
+    min-height: calc(85vh - 70px);
     padding: 4rem 0;
     overflow: hidden;
 }
 
-/* Tipografia */
 .header-title {
     color: var(--primary-color);
     line-height: 1.2;
@@ -95,7 +91,6 @@
     line-height: 1.6;
 }
 
-/* Badge */
 .badge-recipe {
     background-color: var(--accent-color);
     color: var(--accent-color);
@@ -105,7 +100,6 @@
     border-radius: 50px;
 }
 
-/* Pulsanti */
 .btn-recipe-lg-primary {
     background-color: var(--accent-color);
     color: white;
@@ -136,7 +130,6 @@
     color: var(--primary-color);
 }
 
-/* Immagine ed Elementi Visivi */
 .header-image-wrapper {
     display: inline-block;
     width: 100%;
@@ -149,7 +142,6 @@
     z-index: 2;
 }
 
-/* Elemento di sfondo astratto (Blob) */
 .header-bg-blob {
     position: absolute;
     top: -10%;
@@ -162,7 +154,6 @@
     z-index: 1;
 }
 
-/* Card Fluttuante */
 .floating-card {
     bottom: 30px;
     left: -20px;
@@ -183,42 +174,36 @@
     font-size: 1.3rem;
 }
 
-/* Animazione delicata per la card fluttuante */
 @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0px); }
 }
 
-/* Responsive Micro-adjustments */
 @media (max-width: 991.98px) {
     .hero-header {
         padding: 2rem 0;
     }
     .floating-card {
-        left: 20px; /* Riposiziona su schermi medi per non farla uscire dal display */
+        left: 20px;
     }
 }
 
-
-
 /* ==========================================================================
-   Sezione Categorie Popolari
+   VISTA: HOMEPAGE - CATEGORIE POPOLARI 
    ========================================================================== */
 .tracking-wider {
     letter-spacing: 1.5px;
 }
 
-/* Stile base della card categoria */
 .category-card {
-    background-color: #fdfbf7; /* Un panna impercettibile per distaccarsi dal fondo bianco */
+    background-color: #fdfbf7;
     border: 1px solid rgba(0, 0, 0, 0.03);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
     top: 0;
 }
 
-/* Titolo e contatore dentro la card */
 .category-card .category-title {
     color: var(--primary-color);
     transition: color 0.2s ease;
@@ -228,7 +213,6 @@
     transition: color 0.2s ease;
 }
 
-/* Contenitore dell'icona Bootstrap */
 .category-icon-wrapper {
     width: 70px;
     height: 70px;
@@ -240,11 +224,8 @@
     transition: all 0.3s ease;
 }
 
-/* ==========================================================================
-   Stati di Hover (Il tocco professionale)
-   ========================================================================== */
 .category-card:hover {
-    top: -5px; /* Sollevamento millimetrico */
+    top: -5px;
     background-color: #ffffff;
     border-color: rgba(230, 126, 34, 0.15);
     box-shadow: 0 15px 30px rgba(230, 126, 34, 0.05);
@@ -260,7 +241,6 @@
     color: var(--accent-color);
 }
 
-/* Linea decorativa sotto il titolo principale della sezione */
 .section-title::after {
     content: '';
     display: block;
@@ -271,18 +251,14 @@
     border-radius: 2px;
 }
 
-
-
-
 /* ==========================================================================
-   Sezione Statistiche (Social Proof)
+   VISTA: HOMEPAGE - STATISTICHE 
    ========================================================================== */
 .stats-section {
-    background-color: var(--primary-color); /* Sfondo antracite scuro del brand */
+    background-color: var(--primary-color);
     overflow: hidden;
 }
 
-/* Sfondo decorativo minimale asimmetrico */
 .stats-overlay {
     position: absolute;
     top: 0;
@@ -293,19 +269,17 @@
     z-index: 1;
 }
 
-/* Forza gli elementi sopra l'overlay di sfondo */
 .z-2 {
     z-index: 2;
 }
 
-/* Box dell'icona Bootstrap */
 .stats-icon-box {
     width: 55px;
     height: 55px;
     background-color: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    color: var(--accent-color); /* Icona arancione */
+    color: var(--accent-color);
     font-size: 1.5rem;
     display: flex;
     align-items: center;
@@ -313,20 +287,17 @@
     transition: all 0.3s ease;
 }
 
-/* Colore e stile dei numeri */
 .stats-number {
     color: #ffffff;
     letter-spacing: -1px;
 }
 
-/* Sottotitoli opachi per favorire la gerarchia visiva */
 .text-muted-light {
     color: #a0aec0;
     font-size: 0.8rem;
     font-weight: 600;
 }
 
-/* Effetto interazione minimale quando l'utente si posiziona sulla colonna */
 .stats-section .col-sm-6:hover .stats-icon-box {
     background-color: var(--accent-color);
     color: #ffffff;
@@ -335,16 +306,13 @@
     box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
 }
 
-
-
 /* ==========================================================================
-   Sezione Ricetta in Primo Piano (Featured)
+   VISTA: HOMEPAGE - ARTICOLO IN PRIMO PIANO 
    ========================================================================== */
 .featured-section {
     background-color: #ffffff;
 }
 
-/* Contenitore Immagine e Angoli */
 .featured-image-container {
     overflow: hidden;
     border-radius: 16px;
@@ -357,12 +325,10 @@
     transition: transform 0.5s ease;
 }
 
-/* Effetto zoom pulito sull'immagine quando si passa sulla sezione */
 .featured-section:hover .featured-img {
     transform: scale(1.03);
 }
 
-/* Badge personalizzato posizionato sopra l'immagine */
 .badge-featured {
     top: 20px;
     left: 20px;
@@ -376,7 +342,6 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Separatore verticale per i meta-dati */
 .vertical-divider {
     width: 1px;
     height: 14px;
@@ -389,7 +354,6 @@
     line-height: 1.6;
 }
 
-/* Avatar dello Chef */
 .chef-avatar {
     width: 48px;
     height: 48px;
@@ -397,7 +361,6 @@
     border: 2px solid #ffffff;
 }
 
-/* Bottone con bordo colorato del brand */
 .btn-recipe-outline-accent {
     background-color: transparent;
     color: var(--accent-color);
@@ -414,17 +377,14 @@
     box-shadow: 0 8px 20px rgba(230, 126, 34, 0.15);
 }
 
-
-
 /* ==========================================================================
-   Sezione Call-to-Action (Crea Ricetta)
+   VISTA: HOMEPAGE - CALL TO ACTION 
    ========================================================================== */
 .cta-wrapper {
-    background-color: var(--primary-color); /* Fondo scuro coerente con il brand */
+    background-color: var(--primary-color);
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Badge interno alla CTA */
 .badge-cta {
     background-color: rgba(230, 126, 34, 0.2);
     color: var(--accent-color);
@@ -435,7 +395,6 @@
     border: 1px solid rgba(230, 126, 34, 0.3);
 }
 
-/* Testo descrittivo opaco per leggibilità ottimale */
 .text-white-50 {
     color: rgba(255, 255, 255, 0.7) !important;
 }
@@ -444,7 +403,6 @@
     max-width: 550px;
 }
 
-/* Il Pulsante "Call to Action" Principale */
 .btn-cta-action {
     background-color: #ffffff;
     color: var(--primary-color);
@@ -464,9 +422,6 @@
     box-shadow: 0 10px 25px rgba(230, 126, 34, 0.3) !important;
 }
 
-/* ==========================================================================
-   Effetti di Sfondo Astratti (Blob di luce)
-   ========================================================================== */
 .cta-blob {
     position: absolute;
     border-radius: 50%;
@@ -488,10 +443,9 @@
     left: -5%;
     width: 200px;
     height: 200px;
-    background-color: #3498db; /* Un leggero tocco di blu per contrasto cromatico armonioso */
+    background-color: #3498db;
 }
 
-/* Gestione Responsive */
 @media (max-width: 991.98px) {
     .max-w-xl {
         margin-left: auto;
@@ -499,19 +453,14 @@
     }
 }
 
-
-
-
-
 /* ==========================================================================
-   8. FOOTER CUSTOM
+   COMPONENTE: FOOTER 
    ========================================================================== */
 .footer-custom {
-    background-color: #1e2324; /* Un tono leggermente più morbido rispetto al nero puro */
+    background-color: #1e2324;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Link del Footer */
 .footer-links li {
     margin-bottom: 0.7rem;
 }
@@ -526,10 +475,9 @@
 
 .footer-links a:hover {
     color: var(--accent-color);
-    padding-left: 4px; /* Leggero slittamento fluido all'hover */
+    padding-left: 4px;
 }
 
-/* Icone Social */
 .social-link {
     width: 38px;
     height: 38px;
@@ -552,7 +500,6 @@
     transform: translateY(-2px);
 }
 
-/* Input Form Newsletter */
 .footer-form .form-control {
     background-color: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -572,9 +519,171 @@
     color: rgba(255, 255, 255, 0.3);
 }
 
-/* Linea di divisione semitrasparente */
 .border-white-10 {
     border-color: rgba(255, 255, 255, 0.07) !important;
 }
 
+/* ==========================================================================
+   VISTE: ARTICOLI - INDEX 
+   ========================================================================== */
+.bg-light-section {
+    background-color: #fcfbf7;
+}
 
+.shadow-smooth {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.recipe-card {
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+    border-radius: 16px;
+}
+
+.recipe-card-img-wrapper {
+    height: 220px;
+    overflow: hidden;
+}
+
+.recipe-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.recipe-card:hover .recipe-card-img {
+    transform: scale(1.04);
+}
+
+.bg-blur {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(5px);
+    font-weight: 600;
+    padding: 0.5rem 0.9rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+}
+
+.top-3 { top: 1rem; }
+.start-3 { left: 1rem; }
+
+.recipe-meta {
+    border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+.btn-recipe-outline-card {
+    background-color: var(--accent-hover);
+    color: var(--primary-color);
+    border: 1px solid var(--accent-color);
+    padding: 0.6rem 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+/* .btn-recipe-outline-card:hover {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border-color: var(--accent-color);
+} */
+
+.empty-state-box {
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+/* ==========================================================================
+   VISTE: ARTICOLI - CREAZIONE 
+   ========================================================================== */
+.form-control-custom {
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    background-color: #fdfbf7 !important;
+    padding: 0.75rem 1rem;
+    border-radius: 10px !important;
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    transition: all 0.2s ease-in-out !important;
+}
+
+.form-control-custom:focus {
+    background-color: #ffffff !important;
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 0 0 4px rgba(230, 126, 34, 0.1) !important;
+}
+
+.input-icon {
+    z-index: 4;
+}
+
+.start-3 {
+    left: 1rem !important;
+}
+
+input[type="file"].form-control-custom::file-selector-button {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.25rem 0.75rem;
+    margin-right: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+input[type="file"].form-control-custom::file-selector-button:hover {
+    background-color: var(--accent-color);
+}
+
+/* ==========================================================================
+   VISTE: ARTICOLI - DETTAGLIO 
+   ========================================================================== */
+.detail-img-container {
+    height: 450px;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.detail-main-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.leading-relaxed {
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.sidebar-icon-box {
+    width: 42px;
+    height: 42px;
+    background-color: #fdfbf7;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    border-radius: 10px;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.font-xs {
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.bg-dark-sidebar {
+    background-color: var(--primary-color);
+}
+
+@media (min-width: 992px) {
+    .sticky-sidebar {
+        position: sticky;
+        top: 40px;
+    }
+}
