@@ -64,8 +64,7 @@
                     </div>
                 @empty
                     <div class="col-12 text-center py-5">
-                        <div class="empty-state-box p-5 rounded-5 bg-white shadow-smooth mx-auto"
-                            style="max-width: 500px;">
+                        <div class="empty-state-box p-5 rounded-5 bg-white shadow-smooth mx-auto">
                             <i class="bi bi-journal-x display-1 text-muted mb-3"></i>
                             <h4 class="fw-bold text-dark-custom">Nessuna ricetta trovata</h4>
                             <p class="text-muted small mb-4">Il ricettario è ancora vuoto. Condividi la prima ricetta
