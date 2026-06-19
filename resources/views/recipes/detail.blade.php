@@ -49,13 +49,24 @@
                         <div class="card border-0 shadow-smooth rounded-4 bg-white p-4 mb-4">
                             <h5 class="fw-bold text-dark-custom mb-4 pb-2 border-bottom">Informazioni</h5>
 
+                            @if ($recipe->user_id != null)
+                                <div class="d-flex align-items-center gap-3 mb-4">
+                                    <div class="sidebar-icon-box"><i class="bi bi-person"></i></div>
+                                    <div>
+                                        <small
+                                            class="text-muted d-block text-uppercase tracking-wider font-xs">Pubblicato
+                                            da</small>
+                                        <span class="fw-bold text-dark-custom">{{ $recipe->user->name }}</span>
+                                    </div>
+                                </div>
+                            @endif
+
                             <div class="d-flex align-items-center gap-3 mb-4">
                                 <div class="sidebar-icon-box"><i class="bi bi-clock"></i></div>
                                 <div>
                                     <small class="text-muted d-block text-uppercase tracking-wider font-xs">Tempo
                                         Totale</small>
-                                    <span class="fw-bold text-dark-custom">{{ $recipe->preparation_time }}
-                                        minuti</span>
+                                    <span class="fw-bold text-dark-custom">{{ $recipe->preparation_time }} minuti</span>
                                 </div>
                             </div>
 
@@ -85,27 +96,32 @@
                             <p class="small text-white-50 mb-4">Sei l'autore di questa ricetta? Puoi modificarne i testi
                                 o rimuoverla dal portale.</p>
 
-                            <div class="d-grid gap-2">
-                                <a href="{{ route('recipe_edit', compact('recipe')) }}"
-                                    class="btn btn-warning fw-semibold py-2 rounded-3 text-dark">
-                                    <i class="bi bi-pencil-square me-2"></i>Modifica Ricetta
-                                </a>
 
-                                <form action="{{ route('recipe_destroy', $recipe) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-outline-danger fw-semibold py-2 rounded-3">
-                                        <i class="bi bi-trash3 me-2"></i>Elimina
-                                    </button>
-                                </form>
+                            @auth
+                                @if (Auth::id() == $recipe->user_id)
+                                    <div class="d-grid gap-2">
+                                        <a href="{{ route('recipe_edit', compact('recipe')) }}"
+                                            class="btn btn-warning fw-semibold py-2 rounded-3 text-dark">
+                                            <i class="bi bi-pencil-square me-2"></i>Modifica Ricetta
+                                        </a>
 
-                            </div>
+                                        <form action="{{ route('recipe_destroy', $recipe) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-outline-danger fw-semibold py-2 rounded-3">
+                                                <i class="bi bi-trash3 me-2"></i>Elimina
+                                            </button>
+                                        </form>
+                                @endif
+                            @endauth
+
                         </div>
-
-                    </aside>
                 </div>
 
+                </aside>
             </div>
+
+        </div>
         </div>
     </main>
 

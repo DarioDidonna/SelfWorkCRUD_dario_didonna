@@ -2,11 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use App\Models\Recipe;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controllers\Middleware;
+use Illuminate\Support\Facades\Auth;
 
-class RecipeController extends Controller
+class RecipeController extends Controller 
 {
+
+    public static function middleware(): array
+    {
+        return[
+            new Middleware('auth', except:['index', 'show'])
+        ];
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -29,24 +40,15 @@ class RecipeController extends Controller
      */
     public function store(Request $request)
     {
-
-        $validated = $request->validate([
-            'title' => 'required|string|max:150',
-            'description' => 'required|string|min:10',
-            'preparation_time' => 'required|integer|min:1',
-            'category' => 'required|string',
-            'difficulty' => 'required|string',
-            'img' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+        Recipe::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'preparation_time' => $request->preparation_time,
+            'img' => $request->img,
+            'category' => $request->category,
+            'difficulty' => $request->difficulty,
+            'user_id' => Auth::user()->id
         ]);
-
-        if ($request->hasFile('img') && $request->file('img')->isValid()) {
-
-            $path = $request->file('img')->store('recipes', 'public');
-
-            $validated['img'] = $path;
-        }
-
-        Recipe::create($validated);
 
         return redirect(route('recipes_index'))->with('success', 'La tua ricetta è stata pubblicata con successo!');
     }
@@ -86,7 +88,7 @@ class RecipeController extends Controller
             $validated['img'] = $path;
         }
 
-        
+
         $recipe->update($validated);
 
         return redirect()->route('recipes_index')->with('success', 'Ricetta aggiornata!');

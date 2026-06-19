@@ -54,7 +54,7 @@
                             </div>
 
                             <div class="card-footer bg-white border-0 p-4 pt-0">
-                                <a href="{{ route('recipe_show', compact('recipe')) }}"
+                                <a href="{{ route('recipe_show', $recipe) }}"
                                     class="btn btn-recipe-outline-card w-100 d-flex align-items-center justify-content-center gap-2">
                                     Leggi Ricetta <i class="bi bi-arrow-right"></i>
                                 </a>
